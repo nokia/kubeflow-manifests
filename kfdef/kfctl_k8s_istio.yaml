@@ -153,7 +153,11 @@ spec:
   - kustomizeConfig:
       overlays:
       - istio
+      - culling
       - application
+      parameters:
+      - name: ENABLE_CULLING
+        value: 'false'
       repoRef:
         name: manifests
         path: jupyter/notebook-controller
